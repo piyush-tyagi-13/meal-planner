@@ -7,7 +7,21 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import Dict, Optional, List
 from datetime import datetime
+import json
 from config import GMAIL_SENDER_EMAIL, GMAIL_APP_PASSWORD, FAMILY_RECIPIENTS_EMAILS
+
+def get_monthly_quote():
+    """Selects a quote for the current month from quotes.json."""
+    month = datetime.now().strftime("%B")
+    try:
+        with open("quotes.json", encoding="utf-8") as f:
+            quotes = json.load(f)
+        for q in quotes:
+            if q.get("month") == month:
+                return q["quote"], q["author"]
+    except Exception:
+        pass
+    return ("Stay healthy and enjoy your meals!", "Your Family Meal Planner Bot")
 
 def build_email_html(today_meals: Dict[str, Optional[Dict]], tomorrow_ingredients: List[str], date_str: str) -> str:
     """
@@ -30,6 +44,8 @@ def build_email_html(today_meals: Dict[str, Optional[Dict]], tomorrow_ingredient
             """
         else:
             return f"<div class='meal-block'><div class='meal-title'>{meal_time.title()}: <span class='meal-name missing'>No suitable meal found today.</span></div></div>"
+
+    quote, author = get_monthly_quote()
 
     html = f"""
     <html>
@@ -64,7 +80,8 @@ def build_email_html(today_meals: Dict[str, Optional[Dict]], tomorrow_ingredient
         </ul>
         <div class="footer">
           <hr style="border:none;border-top:1px solid #e0e7ef;margin:2em 0 1em 0;" />
-          <div>Stay healthy and enjoy your meals!<br>— Your Family Meal Planner Bot</div>
+          <div style='font-style:italic; margin-bottom:0.3em;'>&ldquo;{quote}&rdquo;</div>
+          <div style='font-size:0.98em; color:#2563eb;'>— {author}</div>
         </div>
       </div>
     </body>
