@@ -10,6 +10,12 @@ from recipe_manager import (
     select_meals, meals_to_persistence_format, get_ingredients_for_meals
 )
 from email_service import build_email_html, send_email
+import os
+from dotenv import load_dotenv
+
+print("DEBUG: CWD =", os.getcwd())
+print("DEBUG: .env exists?", os.path.exists('.env'))
+load_dotenv()
 
 def main():
     meal_times = ["breakfast", "lunch", "dinner"]
@@ -30,11 +36,15 @@ def main():
 
     # 4. Build and send email
     from config import FAMILY_RECIPIENTS_EMAILS
+    print(f"DEBUG: FAMILY_RECIPIENTS_EMAILS = {FAMILY_RECIPIENTS_EMAILS!r}")
     if not FAMILY_RECIPIENTS_EMAILS or FAMILY_RECIPIENTS_EMAILS == ['']:
         print("No recipient emails configured. Exiting.")
         sys.exit(1)
     subject = f"Daily Meal Plan - {date_str}"
     html_body = build_email_html(today_meals, tomorrow_ingredients, date_str)
+    print("--- EMAIL PREVIEW ---")
+    print(html_body)
+    print("--- END EMAIL PREVIEW ---")
     send_email(subject, html_body)
     print(f"Email sent to: {', '.join(FAMILY_RECIPIENTS_EMAILS)}")
 
