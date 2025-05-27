@@ -40,7 +40,12 @@ def main():
     if not FAMILY_RECIPIENTS_EMAILS or FAMILY_RECIPIENTS_EMAILS == ['']:
         print("No recipient emails configured. Exiting.")
         sys.exit(1)
-    subject = f"Daily Meal Plan - {date_str}"
+    # Format date as 'Wednesday, 28 May 2025' for subject
+    try:
+        pretty_date = today.strftime("%A, %d %B %Y")
+    except Exception:
+        pretty_date = date_str
+    subject = f"🍽️ Family Meal Plan for {pretty_date}"
     html_body = build_email_html(today_meals, tomorrow_ingredients, date_str)
     print("--- EMAIL PREVIEW ---")
     print(html_body)
