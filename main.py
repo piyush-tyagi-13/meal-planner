@@ -1,0 +1,46 @@
+"""
+main.py
+Entry point for the Daily Family Meal Mailer. Orchestrates meal selection, email generation, and persistence.
+"""
+import sys
+from datetime import datetime, timedelta
+from config import PREVIOUS_DAY_MEALS_FILE
+from recipe_manager import (
+    load_recipes, load_previous_day_meals, save_previous_day_meals,
+    select_meals, meals_to_persistence_format, get_ingredients_for_meals
+)
+from email_service import build_email_html, send_email
+
+def main():
+    meal_times = ["breakfast", "lunch", "dinner"]
+    today = datetime.now()
+    date_str = today.strftime("%Y-%m-%d")
+
+    # 1. Load data
+    recipes = load_recipes()
+    previous_day_meals = load_previous_day_meals()
+
+    # 2. Select today's meals
+    today_meals = select_meals(recipes, previous_day_meals, meal_times)
+
+    # 3. Prepare tomorrow's meals (simulate, do not persist)
+    today_persistence = meals_to_persistence_format(today_meals)
+    tomorrow_meals = select_meals(recipes, today_persistence, meal_times)
+    tomorrow_ingredients = get_ingredients_for_meals(tomorrow_meals)
+
+    # 4. Build and send email
+    from config import FAMILY_RECIPIENTS_EMAILS
+    if not FAMILY_RECIPIENTS_EMAILS or FAMILY_RECIPIENTS_EMAILS == ['']:
+        print("No recipient emails configured. Exiting.")
+        sys.exit(1)
+    subject = f"Daily Meal Plan - {date_str}"
+    html_body = build_email_html(today_meals, tomorrow_ingredients, date_str)
+    send_email(subject, html_body)
+    print(f"Email sent to: {', '.join(FAMILY_RECIPIENTS_EMAILS)}")
+
+    # 5. Persist today's meals for tomorrow's run
+    save_previous_day_meals(today_persistence)
+    print(f"Updated {PREVIOUS_DAY_MEALS_FILE} for tomorrow's constraint.")
+
+if __name__ == "__main__":
+    main()

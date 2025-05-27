@@ -1,0 +1,4 @@
+# requirements.txt
+# List of dependencies for Daily Family Meal Mailer
+# smtplib and email.mime are built-in, but python-dotenv is useful for local testing
+python-dotenv
