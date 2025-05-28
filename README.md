@@ -62,6 +62,39 @@ Set these repository secrets in **Settings → Secrets and variables → Actions
 - Create a `.env` file in the project root with the same variables as above for local runs.
 - Run `python main.py` to test locally. The email will be sent to the configured recipients.
 
+## Modern Recipe Manager GUI
+
+A modern, tabular, and intuitive recipe management GUI is now available using Python and ttkbootstrap (open source, no license required).
+
+### Features
+- Import/export your `recipes.json` file
+- Add, edit, and delete recipes
+- Recipes displayed in a sortable, scrollable table
+- Double-click a row to edit a recipe
+- Modern look and feel (no trial, no paid features)
+
+### How to Use
+1. Install dependencies (only needed once):
+   ```powershell
+   pip install ttkbootstrap
+   ```
+2. Run the GUI:
+   ```powershell
+   python recipe_gui.py
+   ```
+
+### Screenshots
+*Add your own screenshots here if desired.*
+
+### Notes
+- All data is stored in standard JSON files for easy backup and sharing.
+- The GUI is cross-platform and works on Windows, Mac, and Linux.
+- No proprietary or paid libraries are used.
+
+---
+
+For any issues or feature requests, please open an issue or contact the maintainer.
+
 ## Example Email
 - Modern, clean HTML styling
 - Subject: `🍽️ Family Meal Plan for Wednesday, 28 May 2025`
