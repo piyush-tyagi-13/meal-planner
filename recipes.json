@@ -262,5 +262,133 @@
       "spices"
     ],
     "recipe": "Prepare paneer bhurji using minimal oil. Serve wrapped in large lettuce leaves as a nutritious, low-carb alternative to roti or bread."
+  },
+  {
+    "name": "Vegetable Poha",
+    "mealTimeEligibility": ["breakfast"],
+    "ingredients": [
+      "Poha",
+      "mustard seeds",
+      "peas",
+      "carrots",
+      "onions",
+      "lemon juice"
+    ],
+    "recipe": "Lightly wash and drain flattened rice. In a pan, temper mustard seeds, then add chopped onions, peas, and carrots. Sauté until tender. Add the flattened rice, season with salt and turmeric, and a squeeze of lemon juice. Mix well and serve hot."
+  },
+  {
+    "name": "Masoor Dal with Brown Rice",
+    "mealTimeEligibility": ["lunch", "dinner"],
+    "ingredients": [
+      "Masoor dal",
+      "tomatoes",
+      "garlic",
+      "cumin seeds",
+      "brown rice"
+    ],
+    "recipe": "Cook masoor dal with chopped tomatoes, garlic, and turmeric until soft. Temper with cumin seeds. Serve with cooked brown rice."
+  },
+  {
+    "name": "Palak Tofu Curry",
+    "mealTimeEligibility": ["dinner"],
+    "ingredients": [
+      "Spinach puree",
+      "sautéed tofu cubes",
+      "spices"
+    ],
+    "recipe": "Prepare a smooth spinach puree. Sauté tofu cubes until golden. In a pan, combine the spinach puree with sautéed tofu and your preferred spices (e.g., cumin powder, coriander powder, a pinch of garam masala). Simmer until the flavors meld."
+  },
+  {
+    "name": "Moong Dal Chilla with Mint Chutney",
+    "mealTimeEligibility": ["breakfast"],
+    "ingredients": [
+      "Soaked moong dal",
+      "green chili",
+      "ginger",
+      "coriander"
+    ],
+    "recipe": "Grind soaked moong dal with green chili, ginger, and coriander to make a smooth batter. Cook thin pancakes (chilla) on a non-stick pan with minimal oil. Serve with fresh mint chutney."
+  },
+  {
+    "name": "Quinoa Khichdi",
+    "mealTimeEligibility": ["lunch"],
+    "ingredients": [
+      "Quinoa",
+      "moong dal",
+      "carrot",
+      "peas",
+      "turmeric"
+    ],
+    "recipe": "Combine quinoa, moong dal, chopped carrot, and peas in a pressure cooker. Add water, turmeric, and salt. Cook until done. Serve hot."
+  },
+  {
+    "name": "Oats Upma",
+    "mealTimeEligibility": ["breakfast"],
+    "ingredients": [
+      "Rolled oats",
+      "mustard seeds",
+      "curry leaves",
+      "vegetables"
+    ],
+    "recipe": "Dry roast rolled oats. In a pan, temper mustard seeds and curry leaves. Add chopped vegetables (like onions, carrots, peas) and sauté. Add the roasted oats, water, and salt. Cook until the oats are soft and the water is absorbed."
+  },
+  {
+    "name": "Tofu & Mixed Veg Curry",
+    "mealTimeEligibility": ["dinner"],
+    "ingredients": [
+      "Tofu",
+      "beans",
+      "carrots",
+      "tomato puree",
+      "spices"
+    ],
+    "recipe": "Sauté cubed tofu and mixed vegetables (beans, carrots) in a pan. Add tomato puree and a blend of spices (e.g., turmeric, cumin, coriander). Simmer until the vegetables are tender and the curry thickens."
+  },
+  {
+    "name": "Curds & Chole Salad",
+    "mealTimeEligibility": ["lunch"],
+    "ingredients": [
+      "Chickpeas",
+      "low-fat curd",
+      "carrots",
+      "tomato",
+      "cabbage"
+    ],
+    "recipe": "Combine boiled chickpeas with low-fat curd, diced carrots, chopped tomato, and shredded cabbage. Season with salt, pepper, and a touch of roasted cumin powder. Mix well and serve chilled."
+  },
+  {
+    "name": "Mixed Lentil Soup + Salad",
+    "mealTimeEligibility": ["lunch", "dinner"],
+    "ingredients": [
+      "Moong + masoor dal",
+      "garlic",
+      "turmeric",
+      "black pepper"
+    ],
+    "recipe": "Cook moong and masoor dal until soft. Season with sautéed garlic, turmeric, and black pepper. Blend lightly for a smoother consistency. Serve hot."
+  },
+  {
+    "name": "Paneer/Tofu and Veg Stir-Fry",
+    "mealTimeEligibility": ["lunch", "dinner"],
+    "ingredients": [
+      "Broccoli",
+      "carrots",
+      "cabbage",
+      "corns",
+      "panner",
+      "capsicum",
+      "garlic",
+      "olive oil"
+    ],
+    "recipe": "Heat oil in a pan. Add chopped broccoli, zucchini, and capsicum. Sauté with minced garlic until the vegetables are tender-crisp. Season with salt and pepper."
+  },
+  {
+    "name": "Ragi Dosa (repeat with variation or chutney)",
+    "mealTimeEligibility": ["dinner"],
+    "ingredients": [
+      "Ragi flour",
+      "different chutney like coconut or tomato"
+    ],
+    "recipe": "Prepare Ragi Dosa as per breakfast recipe. Serve with a different chutney, such as a fresh coconut chutney or a tangy tomato chutney, for variety."
   }
 ]
