@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#d97706">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <title>Tyagi Family Meal Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Persistent Header -->
+    <header class="header">
+        <h1>Tyagi Family Meal Planner</h1>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs">
+        <button class="tab active" data-tab="recipes">Recipes</button>
+        <button class="tab" data-tab="recipients">Family</button>
+        <button class="tab" data-tab="guidelines">Guidelines</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Recipes Tab -->
+        <section id="recipes-tab" class="tab-content active">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <button class="btn btn-primary" id="add-recipe-btn">+ Add Recipe</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="recipe-search" placeholder="Search for flavors or ingredients...">
+            </div>
+            <div id="recipes-list" class="cards-list">
+                <!-- Recipes loaded here -->
+            </div>
+        </section>
+
+        <!-- Recipients Tab -->
+        <section id="recipients-tab" class="tab-content">
+            <div class="section-header">
+                <h2>Family List</h2>
+                <button class="btn btn-primary" id="add-recipient-btn">+ Add Member</button>
+            </div>
+            <p style="margin-bottom: 20px; color: var(--text-muted);">Family members who receive the automated daily
+                meal plan.</p>
+            <div id="recipients-list" class="list">
+                <!-- Recipients loaded here -->
+            </div>
+        </section>
+
+        <!-- Guidelines Tab -->
+        <section id="guidelines-tab" class="tab-content">
+            <div class="guidelines-card">
+                <h2>Family Usage Guide</h2>
+
+                <h3>🌟 Automated Planning</h3>
+                <p>The system automatically selects a unique daily menu (Breakfast, Lunch, Dinner). It ensures no meals
+                    are repeated from the previous day to keep our menu fresh and exciting.</p>
+
+                <h3>📝 Managing Recipes</h3>
+                <p>Anyone in the family can contribute to our menu:</p>
+                <ul>
+                    <li><strong>Browse:</strong> Scroll through the "Recipes" tab to see everything available in our
+                        cloud.</li>
+                    <li><strong>Add New:</strong> Tap "+ Add Recipe" to share a new favorite dish.</li>
+                    <li><strong>Edit:</strong> Tap any recipe card if you want to update ingredients or cooking steps.
+                    </li>
+                    <li><strong>Categorize:</strong> Assign recipes to "Breakfast", "Lunch", or "Dinner" to help the
+                        automater pick the right meal for the right time.</li>
+                </ul>
+
+                <h3>✉️ 7:00 AM Daily Email</h3>
+                <p>Every morning at <strong>7:00 AM IST</strong>, the final meal plan for the day is sent to everyone
+                    listed in the "Family" tab.</p>
+
+                <h3>🛒 Grocery Planning</h3>
+                <p>The daily email also includes a list of ingredients needed for <strong>tomorrow's</strong> meals,
+                    helping us stay stocked up without the last-minute rush.</p>
+
+                <h3>☁️ Cloud Sync</h3>
+                <p>The app is pre-configured for our repository. However, you need to provide a <strong>GitHub Access
+                        Token</strong> to enable saving changes. This is done only once per device.</p>
+                <button class="btn btn-secondary edit-token-btn" style="margin-top: 10px; width: 100%;">🔑 Change Cloud
+                    Token</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>A product of Azzbeeter Development Labs.</p>
+    </footer>
+
+    <!-- Setup Modal (Token Entry) -->
+    <div id="setup-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cloud Sync Setup</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="setup-form">
+                <p style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                    To save changes to the cloud, please enter your GitHub Personal Access Token (PAT).
+                </p>
+                <div class="form-group">
+                    <label>GitHub Access Token</label>
+                    <input type="password" id="setup-token" required placeholder="ghp_xxxxxxxxxxxx">
+                    <small>Need a token? <a
+                            href="https://github.com/settings/tokens/new?scopes=repo&description=MealPlanner"
+                            target="_blank">Create one here</a> (select 'repo' scope).</small>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Connect to Cloud</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recipe Modal -->
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="recipe-modal-title">Edit Recipe</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="recipe-form">
+                <div class="form-group">
+                    <label>Dish Name</label>
+                    <input type="text" id="recipe-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Eligible Meal Times</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="mealTime" value="breakfast"><span>Breakfast</span></label>
+                        <label><input type="checkbox" name="mealTime" value="lunch"><span>Lunch</span></label>
+                        <label><input type="checkbox" name="mealTime" value="dinner"><span>Dinner</span></label>
+                        <label><input type="checkbox" name="mealTime" value="snack"><span>Snack</span></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Ingredients (One per line)</label>
+                    <textarea id="recipe-ingredients" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Cooking Instructions</label>
+                    <textarea id="recipe-instructions" rows="5"></textarea>
+                </div>
+                <div style="display: flex; gap: 12px; margin-top: 10px;">
+                    <button type="button" class="btn btn-secondary close-btn" style="flex:1">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex:1">Save to Cloud</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recipient Modal -->
+    <div id="recipient-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Family Member</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="recipient-form">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="recipient-email" required placeholder="name@email.com">
+                </div>
+                <div style="display: flex; gap: 12px; margin-top: 10px;">
+                    <button type="button" class="btn btn-secondary close-btn" style="flex:1">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex:1">Add Member</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- UI Elements -->
+    <div id="loading" class="loading-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
