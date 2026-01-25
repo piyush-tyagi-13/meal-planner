@@ -1,312 +1,313 @@
 [
-    {
-        "id": "R001",
-        "name": "Vegetable Oats Upma",
-        "mealTimeEligibility": [
-            "breakfast"
-        ],
-        "ingredients": [
-            "rolled oats",
-            "carrot",
-            "beans",
-            "onion",
-            "mustard seeds"
-        ],
-        "recipe": "Dry roast oats. Sauté plenty of veggies in mustard oil, add oats and water. High soluble fiber lowers LDL."
-    },
-    {
-        "id": "R002",
-        "name": "Egg White & Veggie Omelet",
-        "mealTimeEligibility": [
-            "breakfast"
-        ],
-        "ingredients": [
-            "egg whites",
-            "onion",
-            "tomato",
-            "capsicum"
-        ],
-        "recipe": "Whisk 3 egg whites. Sauté veggies in minimal olive oil. High protein, zero cholesterol."
-    },
-    {
-        "id": "R003",
-        "name": "Ragi Vegetable Dosa",
-        "mealTimeEligibility": [
-            "breakfast",
-            "dinner"
-        ],
-        "ingredients": [
-            "ragi flour",
-            "low-fat curd",
-            "carrot"
-        ],
-        "recipe": "Prepare batter with ragi flour and curd. Ragi fiber is excellent for heart health."
-    },
-    {
-        "id": "R004",
-        "name": "Whole Wheat Hummus Toast",
-        "mealTimeEligibility": [
-            "breakfast",
-            "snack"
-        ],
-        "ingredients": [
-            "whole wheat bread",
-            "chickpeas",
-            "garlic",
-            "olive oil"
-        ],
-        "recipe": "Spread homemade hummus (low tahini) on toasted whole wheat bread."
-    },
-    {
-        "id": "R005",
-        "name": "Curd and Chole Salad",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "boiled chickpeas",
-            "low-fat curd",
-            "cucumber",
-            "tomato"
-        ],
-        "recipe": "Mix chole with curd and veggies. Citrate in lemon dressing helps prevent kidney stones."
-    },
-    {
-        "id": "R006",
-        "name": "Lauki Moong Dal Soup",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "bottle gourd",
-            "moong dal",
-            "ginger"
-        ],
-        "recipe": "Pressure cook lauki and dal. Very low oxalate and flushes kidney crystals."
-    },
-    {
-        "id": "R007",
-        "name": "Masoor Dal with Brown Rice",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "masoor dal",
-            "garlic",
-            "brown rice"
-        ],
-        "recipe": "Cook dal with garlic. Serve with brown rice to sweep out cholesterol."
-    },
-    {
-        "id": "R008",
-        "name": "Tofu & Mixed Veg Curry",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "tofu",
-            "beans",
-            "carrots",
-            "tomato puree"
-        ],
-        "recipe": "Sauté tofu and veggies. Tofu is a zero-cholesterol replacement for Paneer."
-    },
-    {
-        "id": "R009",
-        "name": "Besan and Methi Chilla",
-        "mealTimeEligibility": [
-            "breakfast",
-            "lunch"
-        ],
-        "ingredients": [
-            "besan",
-            "methi leaves",
-            "ajwain"
-        ],
-        "recipe": "Cook methi-besan pancakes. Methi helps reduce cholesterol absorption."
-    },
-    {
-        "id": "R010",
-        "name": "Karela (Bitter Gourd) Stir-Fry",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "bitter gourd",
-            "onion",
-            "turmeric"
-        ],
-        "recipe": "Sauté sliced karela. Excellent for liver detoxification (Anjali's GGT focus)."
-    },
-    {
-        "id": "R011",
-        "name": "Masala Buttermilk",
-        "mealTimeEligibility": [
-            "breakfast",
-            "lunch",
-            "snack"
-        ],
-        "ingredients": [
-            "low-fat curd",
-            "water",
-            "cumin powder"
-        ],
-        "recipe": "Blend curd with water. Essential for hydration and UTI prevention."
-    },
-    {
-        "id": "R012",
-        "name": "Light Egg White Curry",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "boiled egg whites",
-            "onion-tomato gravy"
-        ],
-        "recipe": "Simmer egg whites in thin gravy. Lean protein safe for high cholesterol."
-    },
-    {
-        "id": "R013",
-        "name": "Low GI Vegetable Stir-Fry",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "broccoli",
-            "cauliflower",
-            "zucchini"
-        ],
-        "recipe": "Sauté high-fiber veggies in olive oil with black pepper."
-    },
-    {
-        "id": "R014",
-        "name": "Quinoa Khichdi",
-        "mealTimeEligibility": [
-            "lunch"
-        ],
-        "ingredients": [
-            "quinoa",
-            "moong dal",
-            "peas"
-        ],
-        "recipe": "Pressure cook quinoa and dal. High fiber and low glycemic index."
-    },
-    {
-        "id": "R015",
-        "name": "Moong Dal Cheela",
-        "mealTimeEligibility": [
-            "breakfast"
-        ],
-        "ingredients": [
-            "soaked moong dal",
-            "ginger",
-            "green chili"
-        ],
-        "recipe": "Grind dal into batter. Cook thin pancakes. High in plant protein and fiber."
-    },
-    {
-        "id": "R016",
-        "name": "Vegetable Dalia",
-        "mealTimeEligibility": [
-            "breakfast",
-            "lunch"
-        ],
-        "ingredients": [
-            "broken wheat",
-            "lauki",
-            "carrots",
-            "moong dal"
-        ],
-        "recipe": "Cook dalia with veggies. High fiber helps stabilize blood sugar and cholesterol."
-    },
-    {
-        "id": "R017",
-        "name": "Jowar Roti & Arhar Dal",
-        "mealTimeEligibility": [
-            "lunch"
-        ],
-        "ingredients": [
-            "jowar flour",
-            "arhar dal",
-            "garlic"
-        ],
-        "recipe": "Gluten-free Jowar rotis with high-protein garlic dal. Excellent for heart health."
-    },
-    {
-        "id": "R018",
-        "name": "Brown Rice & Rajma",
-        "mealTimeEligibility": [
-            "lunch"
-        ],
-        "ingredients": [
-            "kidney beans",
-            "brown rice",
-            "ginger"
-        ],
-        "recipe": "Fiber-rich Rajma (no butter) with brown rice to support healthy lipids."
-    },
-    {
-        "id": "R019",
-        "name": "Tofu Bhurji (Soy Paneer)",
-        "mealTimeEligibility": [
-            "lunch",
-            "dinner"
-        ],
-        "ingredients": [
-            "tofu",
-            "onion",
-            "capsicum",
-            "turmeric"
-        ],
-        "recipe": "Crumble tofu and sauté. Zero saturated fat alternative to Paneer Bhurji."
-    },
-    {
-        "id": "R020",
-        "name": "Soya Chunk Stir-fry",
-        "mealTimeEligibility": [
-            "dinner"
-        ],
-        "ingredients": [
-            "soya chunks",
-            "capsicum",
-            "garlic",
-            "onion"
-        ],
-        "recipe": "Boil soya chunks and sauté with veggies. High protein and heart-safe."
-    },
-    {
-        "id": "R021",
-        "name": "Overnight Oats with Apple",
-        "mealTimeEligibility": [
-            "breakfast"
-        ],
-        "ingredients": [
-            "rolled oats",
-            "skimmed milk",
-            "apple",
-            "walnuts"
-        ],
-        "recipe": "Soak oats in milk overnight. Top with apple. Beta-glucan and Pectin lower bad cholesterol."
-    },
-    {
-        "id": "R022",
-        "name": "Papaya & Sprouts Salad",
-        "mealTimeEligibility": [
-            "dinner",
-            "snack"
-        ],
-        "ingredients": [
-            "papaya",
-            "steamed moong sprouts",
-            "lemon"
-        ],
-        "recipe": "Light dinner of papaya and sprouts. Enzymes in papaya aid liver health."
-    }
+  {
+    "id": "R001",
+    "name": "Vegetable Oats Upma",
+    "mealTimeEligibility": [
+      "breakfast"
+    ],
+    "ingredients": [
+      "rolled oats",
+      "carrot",
+      "beans",
+      "onion",
+      "mustard seeds",
+      "capsicum"
+    ],
+    "recipe": "Dry roast oats. Sauté plenty of veggies in mustard oil, add oats and water. High soluble fiber lowers LDL."
+  },
+  {
+    "id": "R002",
+    "name": "Egg White & Veggie Omelet",
+    "mealTimeEligibility": [
+      "breakfast"
+    ],
+    "ingredients": [
+      "egg whites",
+      "onion",
+      "tomato",
+      "capsicum"
+    ],
+    "recipe": "Whisk 3 egg whites. Sauté veggies in minimal olive oil. High protein, zero cholesterol."
+  },
+  {
+    "id": "R003",
+    "name": "Ragi Vegetable Dosa",
+    "mealTimeEligibility": [
+      "breakfast",
+      "dinner"
+    ],
+    "ingredients": [
+      "ragi flour",
+      "low-fat curd",
+      "carrot"
+    ],
+    "recipe": "Prepare batter with ragi flour and curd. Ragi fiber is excellent for heart health."
+  },
+  {
+    "id": "R004",
+    "name": "Whole Wheat Hummus Toast",
+    "mealTimeEligibility": [
+      "breakfast",
+      "snack"
+    ],
+    "ingredients": [
+      "whole wheat bread",
+      "chickpeas",
+      "garlic",
+      "olive oil"
+    ],
+    "recipe": "Spread homemade hummus (low tahini) on toasted whole wheat bread."
+  },
+  {
+    "id": "R005",
+    "name": "Curd and Chole Salad",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "boiled chickpeas",
+      "low-fat curd",
+      "cucumber",
+      "tomato"
+    ],
+    "recipe": "Mix chole with curd and veggies. Citrate in lemon dressing helps prevent kidney stones."
+  },
+  {
+    "id": "R006",
+    "name": "Lauki Moong Dal Soup",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "bottle gourd",
+      "moong dal",
+      "ginger"
+    ],
+    "recipe": "Pressure cook lauki and dal. Very low oxalate and flushes kidney crystals."
+  },
+  {
+    "id": "R007",
+    "name": "Masoor Dal with Brown Rice",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "masoor dal",
+      "garlic",
+      "brown rice"
+    ],
+    "recipe": "Cook dal with garlic. Serve with brown rice to sweep out cholesterol."
+  },
+  {
+    "id": "R008",
+    "name": "Tofu & Mixed Veg Curry",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "tofu",
+      "beans",
+      "carrots",
+      "tomato puree"
+    ],
+    "recipe": "Sauté tofu and veggies. Tofu is a zero-cholesterol replacement for Paneer."
+  },
+  {
+    "id": "R009",
+    "name": "Besan and Methi Chilla",
+    "mealTimeEligibility": [
+      "breakfast",
+      "lunch"
+    ],
+    "ingredients": [
+      "besan",
+      "methi leaves",
+      "ajwain"
+    ],
+    "recipe": "Cook methi-besan pancakes. Methi helps reduce cholesterol absorption."
+  },
+  {
+    "id": "R010",
+    "name": "Karela (Bitter Gourd) Stir-Fry",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "bitter gourd",
+      "onion",
+      "turmeric"
+    ],
+    "recipe": "Sauté sliced karela. Excellent for liver detoxification (Anjali's GGT focus)."
+  },
+  {
+    "id": "R011",
+    "name": "Masala Buttermilk",
+    "mealTimeEligibility": [
+      "breakfast",
+      "lunch",
+      "snack"
+    ],
+    "ingredients": [
+      "low-fat curd",
+      "water",
+      "cumin powder"
+    ],
+    "recipe": "Blend curd with water. Essential for hydration and UTI prevention."
+  },
+  {
+    "id": "R012",
+    "name": "Light Egg White Curry",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "boiled egg whites",
+      "onion-tomato gravy"
+    ],
+    "recipe": "Simmer egg whites in thin gravy. Lean protein safe for high cholesterol."
+  },
+  {
+    "id": "R013",
+    "name": "Low GI Vegetable Stir-Fry",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "broccoli",
+      "cauliflower",
+      "zucchini"
+    ],
+    "recipe": "Sauté high-fiber veggies in olive oil with black pepper."
+  },
+  {
+    "id": "R014",
+    "name": "Quinoa Khichdi",
+    "mealTimeEligibility": [
+      "lunch"
+    ],
+    "ingredients": [
+      "quinoa",
+      "moong dal",
+      "peas"
+    ],
+    "recipe": "Pressure cook quinoa and dal. High fiber and low glycemic index."
+  },
+  {
+    "id": "R015",
+    "name": "Moong Dal Cheela",
+    "mealTimeEligibility": [
+      "breakfast"
+    ],
+    "ingredients": [
+      "soaked moong dal",
+      "ginger",
+      "green chili"
+    ],
+    "recipe": "Grind dal into batter. Cook thin pancakes. High in plant protein and fiber."
+  },
+  {
+    "id": "R016",
+    "name": "Vegetable Dalia",
+    "mealTimeEligibility": [
+      "breakfast",
+      "lunch"
+    ],
+    "ingredients": [
+      "broken wheat",
+      "lauki",
+      "carrots",
+      "moong dal"
+    ],
+    "recipe": "Cook dalia with veggies. High fiber helps stabilize blood sugar and cholesterol."
+  },
+  {
+    "id": "R017",
+    "name": "Jowar Roti & Arhar Dal",
+    "mealTimeEligibility": [
+      "lunch"
+    ],
+    "ingredients": [
+      "jowar flour",
+      "arhar dal",
+      "garlic"
+    ],
+    "recipe": "Gluten-free Jowar rotis with high-protein garlic dal. Excellent for heart health."
+  },
+  {
+    "id": "R018",
+    "name": "Brown Rice & Rajma",
+    "mealTimeEligibility": [
+      "lunch"
+    ],
+    "ingredients": [
+      "kidney beans",
+      "brown rice",
+      "ginger"
+    ],
+    "recipe": "Fiber-rich Rajma (no butter) with brown rice to support healthy lipids."
+  },
+  {
+    "id": "R019",
+    "name": "Tofu Bhurji (Soy Paneer)",
+    "mealTimeEligibility": [
+      "lunch",
+      "dinner"
+    ],
+    "ingredients": [
+      "tofu",
+      "onion",
+      "capsicum",
+      "turmeric"
+    ],
+    "recipe": "Crumble tofu and sauté. Zero saturated fat alternative to Paneer Bhurji."
+  },
+  {
+    "id": "R020",
+    "name": "Soya Chunk Stir-fry",
+    "mealTimeEligibility": [
+      "dinner"
+    ],
+    "ingredients": [
+      "soya chunks",
+      "capsicum",
+      "garlic",
+      "onion"
+    ],
+    "recipe": "Boil soya chunks and sauté with veggies. High protein and heart-safe."
+  },
+  {
+    "id": "R021",
+    "name": "Overnight Oats with Apple",
+    "mealTimeEligibility": [
+      "breakfast"
+    ],
+    "ingredients": [
+      "rolled oats",
+      "skimmed milk",
+      "apple",
+      "walnuts"
+    ],
+    "recipe": "Soak oats in milk overnight. Top with apple. Beta-glucan and Pectin lower bad cholesterol."
+  },
+  {
+    "id": "R022",
+    "name": "Papaya & Sprouts Salad",
+    "mealTimeEligibility": [
+      "dinner",
+      "snack"
+    ],
+    "ingredients": [
+      "papaya",
+      "steamed moong sprouts",
+      "lemon"
+    ],
+    "recipe": "Light dinner of papaya and sprouts. Enzymes in papaya aid liver health."
+  }
 ]
