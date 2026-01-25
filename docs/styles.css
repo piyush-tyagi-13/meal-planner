@@ -335,6 +335,16 @@ textarea {
     border-radius: 20px;
 }
 
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    /* Fixes iOS extra spacing */
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
 .checkbox-group input:checked+span {
     color: var(--primary);
     font-weight: 700;
