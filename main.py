@@ -35,11 +35,10 @@ def main():
     tomorrow_ingredients = get_ingredients_for_meals(tomorrow_meals)
 
     # 4. Build and send email
-    from config import FAMILY_RECIPIENTS_EMAILS
+    from config import FAMILY_RECIPIENTS_EMAILS, SEND_EMAILS
+    print(f"DEBUG: SEND_EMAILS = {SEND_EMAILS}")
     print(f"DEBUG: FAMILY_RECIPIENTS_EMAILS = {FAMILY_RECIPIENTS_EMAILS!r}")
-    if not FAMILY_RECIPIENTS_EMAILS or FAMILY_RECIPIENTS_EMAILS == ['']:
-        print("No recipient emails configured. Exiting.")
-        sys.exit(1)
+    
     # Format date as 'Wednesday, 28 May 2025' for subject
     try:
         pretty_date = today.strftime("%A, %d %B %Y")
@@ -47,11 +46,27 @@ def main():
         pretty_date = date_str
     subject = f"🍽️ Family Meal Plan for {pretty_date}"
     html_body = build_email_html(today_meals, tomorrow_ingredients, date_str)
+    
     print("--- EMAIL PREVIEW ---")
     print(html_body)
     print("--- END EMAIL PREVIEW ---")
-    send_email(subject, html_body)
-    print(f"Email sent to: {', '.join(FAMILY_RECIPIENTS_EMAILS)}")
+    
+    if SEND_EMAILS:
+        if not FAMILY_RECIPIENTS_EMAILS or FAMILY_RECIPIENTS_EMAILS == ['']:
+            print("No recipient emails configured. Exiting.")
+            sys.exit(1)
+        send_email(subject, html_body)
+        print(f"Email sent to: {', '.join(FAMILY_RECIPIENTS_EMAILS)}")
+    else:
+        # Save email as HTML file instead of sending
+        mail_folder = os.path.join(os.path.dirname(__file__), "mail")
+        os.makedirs(mail_folder, exist_ok=True)
+        html_filename = f"meal_plan_{date_str}.html"
+        html_path = os.path.join(mail_folder, html_filename)
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(html_body)
+        print(f"📄 Email saved as HTML: {html_path}")
+        print("   (Open in browser to view or print to PDF)")
 
     # 5. Persist today's meals for tomorrow's run
     save_previous_day_meals(today_persistence)

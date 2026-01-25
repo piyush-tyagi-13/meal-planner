@@ -1,394 +1,312 @@
 [
-  {
-    "name": "Curd and Chole Salad",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "chole",
-      "curd (low-fat)",
-      "cucumber",
-      "carrot",
-      "onion",
-      "tomato",
-      "cabbage"
-    ],
-    "recipe": "Mix boiled chole with low-fat curd, diced cucumber, grated carrot, chopped onion, diced tomato, and shredded cabbage. Season with roasted cumin powder and a pinch of rock salt. Serve chilled."
-  },
-  {
-    "name": "Sprouted Moong and Cucumber Salad",
-    "mealTimeEligibility": ["breakfast", "lunch", "dinner"],
-    "ingredients": [
-      "sprouted moong",
-      "cucumber",
-      "tomato",
-      "onion",
-      "lemon juice",
-      "black salt",
-      "coriander"
-    ],
-    "recipe": "Combine sprouted moong, chopped cucumber, tomato, and onion. Add lemon juice, black salt, and chopped coriander. Serve fresh. Avoid adding any sugar or sweet chutneys."
-  },
-  {
-    "name": "Besan and Methi Chilla",
-    "mealTimeEligibility": ["breakfast", "lunch"],
-    "ingredients": [
-      "besan",
-      "fenugreek (methi) leaves",
-      "green chili",
-      "ajwain",
-      "turmeric",
-      "onion"
-    ],
-    "recipe": "Make a batter with besan, chopped methi leaves, green chili, turmeric, ajwain, and onion. Cook on a non-stick pan with minimal oil. Serve with mint chutney."
-  },
-  {
-    "name": "Low GI Vegetable Stir-Fry",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "broccoli",
-      "cauliflower",
-      "zucchini",
-      "capsicum",
-      "olive oil",
-      "garlic",
-      "black pepper"
-    ],
-    "recipe": "Lightly stir-fry the vegetables in olive oil with crushed garlic and black pepper. Cook until tender but not mushy. Serve warm."
-  },
-  {
-    "name": "Lauki Moong Dal Soup",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "bottle gourd (lauki)",
-      "moong dal",
-      "turmeric",
-      "cumin seeds",
-      "ginger"
-    ],
-    "recipe": "Pressure cook lauki and moong dal with turmeric. Blend slightly and temper with cumin and grated ginger. Avoid adding ghee or butter."
-  },
-  {
-    "name": "Ragi Vegetable Dosa",
-    "mealTimeEligibility": ["breakfast", "dinner"],
-    "ingredients": [
-      "ragi flour",
-      "curd (low-fat)",
-      "grated carrot",
-      "onion",
-      "green chili",
-      "coriander"
-    ],
-    "recipe": "Make a batter using ragi flour and curd. Mix in grated vegetables and spices. Cook on a hot pan with minimal oil. Serve with tomato or mint chutney."
-  },
-  {
-    "name": "Karela (Bitter Gourd) Stir-Fry",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "bitter gourd (karela)",
-      "onion",
-      "mustard seeds",
-      "turmeric",
-      "salt",
-      "amchur"
-    ],
-    "recipe": "Thinly slice karela and soak in salt water for 30 mins. Sauté with onions, turmeric, mustard seeds, and amchur powder until cooked and lightly crisp. Do not deep-fry."
-  },
-  {
-    "name": "Vegetable Oats Upma",
-    "mealTimeEligibility": ["breakfast"],
-    "ingredients": [
-      "rolled oats",
-      "carrot",
-      "beans",
-      "onion",
-      "green chili",
-      "mustard seeds",
-      "curry leaves"
-    ],
-    "recipe": "Dry roast oats. In a pan, temper mustard seeds and curry leaves, sauté chopped veggies, add oats, water, and salt. Cook until soft. Avoid adding ghee or coconut."
-  },
-  {
-    "name": "Palak Tofu Bhurji",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "tofu",
-      "spinach",
-      "onion",
-      "tomato",
-      "garlic",
-      "spices"
-    ],
-    "recipe": "Crumble tofu and sauté with chopped spinach, onion, tomato, and spices. Great source of protein with low carbs and zero cholesterol."
-  },
-  {
-    "name": "Masala Buttermilk",
-    "mealTimeEligibility": ["breakfast", "lunch", "snack"],
-    "ingredients": [
-      "low-fat curd",
-      "water",
-      "roasted cumin powder",
-      "mint",
-      "coriander",
-      "salt"
-    ],
-    "recipe": "Blend low-fat curd with water, add roasted cumin powder, chopped mint, coriander, and a pinch of salt. Serve chilled. A refreshing drink that also aids digestion and controls blood sugar spikes."
-  },
-  {
-    "name": "Spinach (Palak) Cheela",
-    "mealTimeEligibility": ["breakfast", "lunch"],
-    "ingredients": [
-      "besan",
-      "spinach",
-      "green chili",
-      "ginger",
-      "turmeric",
-      "ajwain"
-    ],
-    "recipe": "Make a batter using besan, finely chopped spinach, green chili, ginger, turmeric, ajwain, and water. Cook on a non-stick pan with minimal oil until golden on both sides."
-  },
-  {
-    "name": "Mashed Chickpea Tikkis",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "boiled chickpeas",
-      "onion",
-      "carrot",
-      "green chili",
-      "coriander",
-      "flaxseed powder",
-      "spices"
-    ],
-    "recipe": "Mash chickpeas with grated carrot, onion, green chili, and spices. Add flaxseed powder as a binder. Shape into tikkis and shallow fry in a non-stick pan until crispy."
-  },
-  {
-    "name": "Vegetable Quinoa Pulao",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "quinoa",
-      "carrot",
-      "beans",
-      "capsicum",
-      "onion",
-      "cumin seeds",
-      "turmeric"
-    ],
-    "recipe": "Cook quinoa separately. In a pan, sauté vegetables with cumin and turmeric. Mix in cooked quinoa and stir well. Serve warm."
-  },
-  {
-    "name": "Methi Thepla (Diabetic-friendly)",
-    "mealTimeEligibility": ["breakfast", "lunch"],
-    "ingredients": [
-      "whole wheat flour",
-      "fenugreek leaves",
-      "carom seeds",
-      "turmeric",
-      "low-fat curd"
-    ],
-    "recipe": "Knead dough with whole wheat flour, chopped methi, turmeric, carom seeds, and curd. Roll into thin theplas and cook on a tawa using minimal oil."
-  },
-  {
-    "name": "Cauliflower Rice Stir-fry",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "cauliflower",
-      "capsicum",
-      "beans",
-      "garlic",
-      "ginger",
-      "olive oil"
-    ],
-    "recipe": "Grate cauliflower to form rice-like texture. Stir-fry with vegetables, garlic, and ginger in olive oil. Cook until tender. Avoid adding soy sauce or sugar."
-  },
-  {
-    "name": "Stuffed Lauki Paratha",
-    "mealTimeEligibility": ["breakfast", "lunch"],
-    "ingredients": [
-      "grated bottle gourd",
-      "whole wheat flour",
-      "carom seeds",
-      "green chili",
-      "coriander"
-    ],
-    "recipe": "Mix grated lauki with wheat flour and spices. Roll into parathas and cook on tawa with little oil. Serve with low-fat curd."
-  },
-  {
-    "name": "Tofu and Mixed Veg Curry",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "tofu",
-      "carrot",
-      "beans",
-      "capsicum",
-      "tomato puree",
-      "ginger",
-      "garlic",
-      "spices"
-    ],
-    "recipe": "Sauté vegetables and tofu with ginger, garlic, and tomato puree. Add turmeric, cumin, and coriander powder. Simmer until cooked. Serve with roti or quinoa."
-  },
-  {
-    "name": "Kuttu (Buckwheat) Pancakes",
-    "mealTimeEligibility": ["breakfast"],
-    "ingredients": [
-      "kuttu flour",
-      "grated bottle gourd",
-      "green chili",
-      "curd",
-      "salt"
-    ],
-    "recipe": "Mix all ingredients into a thick batter. Pour on a non-stick pan to form pancakes. Cook both sides using minimal oil."
-  },
-  {
-    "name": "Mixed Lentil Soup",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "moong dal",
-      "masoor dal",
-      "garlic",
-      "turmeric",
-      "black pepper",
-      "coriander"
-    ],
-    "recipe": "Cook lentils until soft. Blend slightly and temper with garlic, turmeric, and black pepper. Garnish with coriander. A wholesome, fiber-rich soup."
-  },
-  {
-    "name": "Low-Carb Paneer Bhurji Lettuce Wrap",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "paneer (low-fat)",
-      "onion",
-      "tomato",
-      "capsicum",
-      "lettuce leaves",
-      "spices"
-    ],
-    "recipe": "Prepare paneer bhurji using minimal oil. Serve wrapped in large lettuce leaves as a nutritious, low-carb alternative to roti or bread."
-  },
-  {
-    "name": "Vegetable Poha",
-    "mealTimeEligibility": ["breakfast"],
-    "ingredients": [
-      "Poha",
-      "mustard seeds",
-      "peas",
-      "carrots",
-      "onions",
-      "lemon juice"
-    ],
-    "recipe": "Lightly wash and drain flattened rice. In a pan, temper mustard seeds, then add chopped onions, peas, and carrots. Sauté until tender. Add the flattened rice, season with salt and turmeric, and a squeeze of lemon juice. Mix well and serve hot."
-  },
-  {
-    "name": "Masoor Dal with Brown Rice",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "Masoor dal",
-      "tomatoes",
-      "garlic",
-      "cumin seeds",
-      "brown rice"
-    ],
-    "recipe": "Cook masoor dal with chopped tomatoes, garlic, and turmeric until soft. Temper with cumin seeds. Serve with cooked brown rice."
-  },
-  {
-    "name": "Palak Tofu Curry",
-    "mealTimeEligibility": ["dinner"],
-    "ingredients": [
-      "Spinach puree",
-      "sautéed tofu cubes",
-      "spices"
-    ],
-    "recipe": "Prepare a smooth spinach puree. Sauté tofu cubes until golden. In a pan, combine the spinach puree with sautéed tofu and your preferred spices (e.g., cumin powder, coriander powder, a pinch of garam masala). Simmer until the flavors meld."
-  },
-  {
-    "name": "Moong Dal Chilla with Mint Chutney",
-    "mealTimeEligibility": ["breakfast"],
-    "ingredients": [
-      "Soaked moong dal",
-      "green chili",
-      "ginger",
-      "coriander"
-    ],
-    "recipe": "Grind soaked moong dal with green chili, ginger, and coriander to make a smooth batter. Cook thin pancakes (chilla) on a non-stick pan with minimal oil. Serve with fresh mint chutney."
-  },
-  {
-    "name": "Quinoa Khichdi",
-    "mealTimeEligibility": ["lunch"],
-    "ingredients": [
-      "Quinoa",
-      "moong dal",
-      "carrot",
-      "peas",
-      "turmeric"
-    ],
-    "recipe": "Combine quinoa, moong dal, chopped carrot, and peas in a pressure cooker. Add water, turmeric, and salt. Cook until done. Serve hot."
-  },
-  {
-    "name": "Oats Upma",
-    "mealTimeEligibility": ["breakfast"],
-    "ingredients": [
-      "Rolled oats",
-      "mustard seeds",
-      "curry leaves",
-      "vegetables"
-    ],
-    "recipe": "Dry roast rolled oats. In a pan, temper mustard seeds and curry leaves. Add chopped vegetables (like onions, carrots, peas) and sauté. Add the roasted oats, water, and salt. Cook until the oats are soft and the water is absorbed."
-  },
-  {
-    "name": "Tofu & Mixed Veg Curry",
-    "mealTimeEligibility": ["dinner"],
-    "ingredients": [
-      "Tofu",
-      "beans",
-      "carrots",
-      "tomato puree",
-      "spices"
-    ],
-    "recipe": "Sauté cubed tofu and mixed vegetables (beans, carrots) in a pan. Add tomato puree and a blend of spices (e.g., turmeric, cumin, coriander). Simmer until the vegetables are tender and the curry thickens."
-  },
-  {
-    "name": "Curds & Chole Salad",
-    "mealTimeEligibility": ["lunch"],
-    "ingredients": [
-      "Chickpeas",
-      "low-fat curd",
-      "carrots",
-      "tomato",
-      "cabbage"
-    ],
-    "recipe": "Combine boiled chickpeas with low-fat curd, diced carrots, chopped tomato, and shredded cabbage. Season with salt, pepper, and a touch of roasted cumin powder. Mix well and serve chilled."
-  },
-  {
-    "name": "Mixed Lentil Soup + Salad",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "Moong + masoor dal",
-      "garlic",
-      "turmeric",
-      "black pepper"
-    ],
-    "recipe": "Cook moong and masoor dal until soft. Season with sautéed garlic, turmeric, and black pepper. Blend lightly for a smoother consistency. Serve hot."
-  },
-  {
-    "name": "Paneer/Tofu and Veg Stir-Fry",
-    "mealTimeEligibility": ["lunch", "dinner"],
-    "ingredients": [
-      "Broccoli",
-      "carrots",
-      "cabbage",
-      "corns",
-      "panner",
-      "capsicum",
-      "garlic",
-      "olive oil"
-    ],
-    "recipe": "Heat oil in a pan. Add chopped broccoli, zucchini, and capsicum. Sauté with minced garlic until the vegetables are tender-crisp. Season with salt and pepper."
-  },
-  {
-    "name": "Ragi Dosa (repeat with variation or chutney)",
-    "mealTimeEligibility": ["dinner"],
-    "ingredients": [
-      "Ragi flour",
-      "different chutney like coconut or tomato"
-    ],
-    "recipe": "Prepare Ragi Dosa as per breakfast recipe. Serve with a different chutney, such as a fresh coconut chutney or a tangy tomato chutney, for variety."
-  }
+    {
+        "id": "R001",
+        "name": "Vegetable Oats Upma",
+        "mealTimeEligibility": [
+            "breakfast"
+        ],
+        "ingredients": [
+            "rolled oats",
+            "carrot",
+            "beans",
+            "onion",
+            "mustard seeds"
+        ],
+        "recipe": "Dry roast oats. Sauté plenty of veggies in mustard oil, add oats and water. High soluble fiber lowers LDL."
+    },
+    {
+        "id": "R002",
+        "name": "Egg White & Veggie Omelet",
+        "mealTimeEligibility": [
+            "breakfast"
+        ],
+        "ingredients": [
+            "egg whites",
+            "onion",
+            "tomato",
+            "capsicum"
+        ],
+        "recipe": "Whisk 3 egg whites. Sauté veggies in minimal olive oil. High protein, zero cholesterol."
+    },
+    {
+        "id": "R003",
+        "name": "Ragi Vegetable Dosa",
+        "mealTimeEligibility": [
+            "breakfast",
+            "dinner"
+        ],
+        "ingredients": [
+            "ragi flour",
+            "low-fat curd",
+            "carrot"
+        ],
+        "recipe": "Prepare batter with ragi flour and curd. Ragi fiber is excellent for heart health."
+    },
+    {
+        "id": "R004",
+        "name": "Whole Wheat Hummus Toast",
+        "mealTimeEligibility": [
+            "breakfast",
+            "snack"
+        ],
+        "ingredients": [
+            "whole wheat bread",
+            "chickpeas",
+            "garlic",
+            "olive oil"
+        ],
+        "recipe": "Spread homemade hummus (low tahini) on toasted whole wheat bread."
+    },
+    {
+        "id": "R005",
+        "name": "Curd and Chole Salad",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "boiled chickpeas",
+            "low-fat curd",
+            "cucumber",
+            "tomato"
+        ],
+        "recipe": "Mix chole with curd and veggies. Citrate in lemon dressing helps prevent kidney stones."
+    },
+    {
+        "id": "R006",
+        "name": "Lauki Moong Dal Soup",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "bottle gourd",
+            "moong dal",
+            "ginger"
+        ],
+        "recipe": "Pressure cook lauki and dal. Very low oxalate and flushes kidney crystals."
+    },
+    {
+        "id": "R007",
+        "name": "Masoor Dal with Brown Rice",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "masoor dal",
+            "garlic",
+            "brown rice"
+        ],
+        "recipe": "Cook dal with garlic. Serve with brown rice to sweep out cholesterol."
+    },
+    {
+        "id": "R008",
+        "name": "Tofu & Mixed Veg Curry",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "tofu",
+            "beans",
+            "carrots",
+            "tomato puree"
+        ],
+        "recipe": "Sauté tofu and veggies. Tofu is a zero-cholesterol replacement for Paneer."
+    },
+    {
+        "id": "R009",
+        "name": "Besan and Methi Chilla",
+        "mealTimeEligibility": [
+            "breakfast",
+            "lunch"
+        ],
+        "ingredients": [
+            "besan",
+            "methi leaves",
+            "ajwain"
+        ],
+        "recipe": "Cook methi-besan pancakes. Methi helps reduce cholesterol absorption."
+    },
+    {
+        "id": "R010",
+        "name": "Karela (Bitter Gourd) Stir-Fry",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "bitter gourd",
+            "onion",
+            "turmeric"
+        ],
+        "recipe": "Sauté sliced karela. Excellent for liver detoxification (Anjali's GGT focus)."
+    },
+    {
+        "id": "R011",
+        "name": "Masala Buttermilk",
+        "mealTimeEligibility": [
+            "breakfast",
+            "lunch",
+            "snack"
+        ],
+        "ingredients": [
+            "low-fat curd",
+            "water",
+            "cumin powder"
+        ],
+        "recipe": "Blend curd with water. Essential for hydration and UTI prevention."
+    },
+    {
+        "id": "R012",
+        "name": "Light Egg White Curry",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "boiled egg whites",
+            "onion-tomato gravy"
+        ],
+        "recipe": "Simmer egg whites in thin gravy. Lean protein safe for high cholesterol."
+    },
+    {
+        "id": "R013",
+        "name": "Low GI Vegetable Stir-Fry",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "broccoli",
+            "cauliflower",
+            "zucchini"
+        ],
+        "recipe": "Sauté high-fiber veggies in olive oil with black pepper."
+    },
+    {
+        "id": "R014",
+        "name": "Quinoa Khichdi",
+        "mealTimeEligibility": [
+            "lunch"
+        ],
+        "ingredients": [
+            "quinoa",
+            "moong dal",
+            "peas"
+        ],
+        "recipe": "Pressure cook quinoa and dal. High fiber and low glycemic index."
+    },
+    {
+        "id": "R015",
+        "name": "Moong Dal Cheela",
+        "mealTimeEligibility": [
+            "breakfast"
+        ],
+        "ingredients": [
+            "soaked moong dal",
+            "ginger",
+            "green chili"
+        ],
+        "recipe": "Grind dal into batter. Cook thin pancakes. High in plant protein and fiber."
+    },
+    {
+        "id": "R016",
+        "name": "Vegetable Dalia",
+        "mealTimeEligibility": [
+            "breakfast",
+            "lunch"
+        ],
+        "ingredients": [
+            "broken wheat",
+            "lauki",
+            "carrots",
+            "moong dal"
+        ],
+        "recipe": "Cook dalia with veggies. High fiber helps stabilize blood sugar and cholesterol."
+    },
+    {
+        "id": "R017",
+        "name": "Jowar Roti & Arhar Dal",
+        "mealTimeEligibility": [
+            "lunch"
+        ],
+        "ingredients": [
+            "jowar flour",
+            "arhar dal",
+            "garlic"
+        ],
+        "recipe": "Gluten-free Jowar rotis with high-protein garlic dal. Excellent for heart health."
+    },
+    {
+        "id": "R018",
+        "name": "Brown Rice & Rajma",
+        "mealTimeEligibility": [
+            "lunch"
+        ],
+        "ingredients": [
+            "kidney beans",
+            "brown rice",
+            "ginger"
+        ],
+        "recipe": "Fiber-rich Rajma (no butter) with brown rice to support healthy lipids."
+    },
+    {
+        "id": "R019",
+        "name": "Tofu Bhurji (Soy Paneer)",
+        "mealTimeEligibility": [
+            "lunch",
+            "dinner"
+        ],
+        "ingredients": [
+            "tofu",
+            "onion",
+            "capsicum",
+            "turmeric"
+        ],
+        "recipe": "Crumble tofu and sauté. Zero saturated fat alternative to Paneer Bhurji."
+    },
+    {
+        "id": "R020",
+        "name": "Soya Chunk Stir-fry",
+        "mealTimeEligibility": [
+            "dinner"
+        ],
+        "ingredients": [
+            "soya chunks",
+            "capsicum",
+            "garlic",
+            "onion"
+        ],
+        "recipe": "Boil soya chunks and sauté with veggies. High protein and heart-safe."
+    },
+    {
+        "id": "R021",
+        "name": "Overnight Oats with Apple",
+        "mealTimeEligibility": [
+            "breakfast"
+        ],
+        "ingredients": [
+            "rolled oats",
+            "skimmed milk",
+            "apple",
+            "walnuts"
+        ],
+        "recipe": "Soak oats in milk overnight. Top with apple. Beta-glucan and Pectin lower bad cholesterol."
+    },
+    {
+        "id": "R022",
+        "name": "Papaya & Sprouts Salad",
+        "mealTimeEligibility": [
+            "dinner",
+            "snack"
+        ],
+        "ingredients": [
+            "papaya",
+            "steamed moong sprouts",
+            "lemon"
+        ],
+        "recipe": "Light dinner of papaya and sprouts. Enzymes in papaya aid liver health."
+    }
 ]

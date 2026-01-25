@@ -26,6 +26,7 @@ jobs:
 
       - name: Run Daily Meal Mailer
         env:
+          SEND_EMAILS: 'true'
           GMAIL_SENDER_EMAIL: ${{ secrets.GMAIL_SENDER_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           FAMILY_RECIPIENTS_EMAILS: ${{ secrets.FAMILY_RECIPIENTS_EMAILS }}
