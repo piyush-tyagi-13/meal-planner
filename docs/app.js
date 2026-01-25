@@ -90,7 +90,8 @@ const App = {
         const body = {
             message,
             content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
-            sha
+            sha,
+            branch: this.settings.branch
         };
         return this.githubAPI(filename, 'PUT', body);
     },

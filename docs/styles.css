@@ -34,31 +34,32 @@
 
 .header-action-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 10px;
+    /* Float above the title bar / tab line */
     background: var(--bg);
     border: 1px solid var(--border);
-    padding: 8px;
+    padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     box-shadow: var(--shadow);
+    z-index: 10;
 }
 
 .header-action-btn.left {
-    left: 20px;
+    left: 16px;
 }
 
 .header-action-btn.right {
-    right: 20px;
+    right: 16px;
 }
 
 .header-action-btn:active {
-    transform: translateY(-50%) scale(0.9);
+    transform: scale(0.9);
 }
 
 [data-theme="dark"] .header-action-btn {
@@ -86,13 +87,16 @@ h1,
     font-family: 'Playfair Display', serif;
 }
 
-/* Header - More Prominent */
+/* Header - More Prominent & Floating Buttons */
 .header {
     background: var(--card-bg);
-    padding: 32px 20px;
+    padding: 40px 20px 50px 20px;
+    /* More bottom padding for buttons */
     text-align: center;
     border-bottom: 2px solid var(--primary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    /* Base for floating buttons */
 }
 
 .header h1 {
