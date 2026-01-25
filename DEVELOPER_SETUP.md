@@ -11,7 +11,7 @@ Everything is already built and pre-configured with your credentials. You only n
    - Go to your repo on GitHub: `https://github.com/piyush-tyagi-13/meal-planner`.
    - Click **Settings** → **Pages**.
    - Under **Build and deployment**, set **Source** to "Deploy from a branch".
-   - Set **Branch** to `MobileAppVersion` and the folder to `/webapp`.
+   - Set **Branch** to `MobileAppVersion` and the folder to `/docs`.
    - Click **Save**.
 3. **Wait for Deployment**: Within a minute, GitHub will provide a URL (e.g., `https://piyush-tyagi-13.github.io/meal-planner/`). This is your live app!
 
