@@ -56,7 +56,12 @@ const App = {
 
     async githubAPI(path, method = 'GET', body = null) {
         let url = `https://api.github.com/repos/${this.settings.owner}/${this.settings.repo}/contents/${path}`;
-        if (method === 'GET') url += `?ref=${this.settings.branch}`;
+
+        // CACHE BUSTING: Add a unique timestamp to every GET request
+        if (method === 'GET') {
+            const cacheBuster = Date.now();
+            url += `?ref=${this.settings.branch}&t=${cacheBuster}`;
+        }
 
         const headers = {
             'Authorization': `token ${this.settings.pat}`,
@@ -303,6 +308,12 @@ const App = {
     },
 
     bindEvents() {
+        // Refresh data
+        document.getElementById('refresh-btn').addEventListener('click', () => {
+            this.showToast('🔄 Syncing with Cloud...');
+            this.loadData();
+        });
+
         // Theme toggle
         document.getElementById('theme-toggle').addEventListener('click', () => this.toggleTheme());
 

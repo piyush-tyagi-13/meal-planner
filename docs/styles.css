@@ -32,9 +32,8 @@
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
 }
 
-.theme-toggle-btn {
+.header-action-btn {
     position: absolute;
-    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     background: var(--bg);
@@ -50,11 +49,19 @@
     box-shadow: var(--shadow);
 }
 
-.theme-toggle-btn:active {
+.header-action-btn.left {
+    left: 20px;
+}
+
+.header-action-btn.right {
+    right: 20px;
+}
+
+.header-action-btn:active {
     transform: translateY(-50%) scale(0.9);
 }
 
-[data-theme="dark"] .theme-toggle-btn {
+[data-theme="dark"] .header-action-btn {
     background: var(--card-bg);
 }
 
