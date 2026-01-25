@@ -1,108 +1,93 @@
-# Daily Family Meal Mailer
+# 🥘 Tyagi Family Meal Planner
 
-A Python project that generates a unique daily meal plan (Breakfast, Lunch, Dinner) for your family, emails the plan with recipes, and lists ingredients needed for the next day's meals. Designed to run automatically via GitHub Actions every morning at 7 AM IST.
-
-## Features
-- Loads recipes from a JSON file (`recipes.json`).
-- Selects meals for each mealtime, ensuring:
-  - No recipe is repeated from the previous day.
-  - No recipe is repeated within the same day.
-  - Only eligible recipes for each meal time are considered.
-- Sends a modern, professional HTML email with:
-  - Today's meal plan and recipes.
-  - Ingredients to stock up for tomorrow.
-  - **A motivational quote for the current month, with author, selected from `quotes.json`.**
-- Persists the previous day's meals for constraint enforcement.
-- Fully automated via GitHub Actions, including auto-commit of state.
-
-## Project Structure
-```
-meal-planner/
-├── config.py                  # Loads environment variables and file paths
-├── email_service.py           # Builds and sends the HTML email (uses quotes.json for monthly quotes)
-├── main.py                    # Orchestrates the workflow
-├── previous_day_meals.json    # Stores previous day's meals (auto-managed)
-├── recipe_manager.py          # Handles recipe loading, meal selection, and persistence
-├── recipes.json               # Your recipe data (edit this file)
-├── quotes.json                # Monthly motivational quotes with author
-├── requirements.txt           # Python dependencies
-└── .github/
-    └── workflows/
-        └── daily_mailer.yml   # GitHub Actions workflow
-```
-
-## Setup & Usage
-
-### 1. Prepare Your Recipes
-- Edit `recipes.json` to add your recipes. Each recipe must have:
-  - `name`: Recipe name
-  - `mealTimeEligibility`: List of meal times (e.g., `["breakfast", "lunch"]`)
-  - `ingredients`: List of ingredients
-  - `recipe`: Recipe instructions
-
-### 2. Add Monthly Quotes
-- Edit `quotes.json` to add or update motivational quotes for each month. Each entry must have:
-  - `month`: Full month name (e.g., `"May"`)
-  - `quote`: The quote text
-  - `author`: The person who said the quote
-- The email footer will display the quote and author for the current month.
-
-### 3. Configure GitHub Secrets
-Set these repository secrets in **Settings → Secrets and variables → Actions**:
-- `GMAIL_SENDER_EMAIL`: The Gmail address to send emails from
-- `GMAIL_APP_PASSWORD`: [Google App Password](https://support.google.com/accounts/answer/185833?hl=en) for the sender Gmail
-- `FAMILY_RECIPIENTS_EMAILS`: Comma-separated list of recipient emails (e.g., `user1@example.com,user2@example.com`)
-- `GH_PAT`: A [Personal Access Token](https://github.com/settings/tokens) with `repo` write access (for auto-committing state)
-
-### 4. GitHub Actions Workflow
-- The workflow runs every day at **7 AM IST** (1:00 UTC) and can also be triggered manually.
-- It installs dependencies, runs the script, sends the email, and commits `previous_day_meals.json`.
-
-### 5. Local Testing
-- Create a `.env` file in the project root with the same variables as above for local runs.
-- Run `python main.py` to test locally. The email will be sent to the configured recipients.
-
-## Modern Recipe Manager GUI
-
-A modern, tabular, and intuitive recipe management GUI is now available using Python and ttkbootstrap (open source, no license required).
-
-### Features
-- Import/export your `recipes.json` file
-- Add, edit, and delete recipes
-- Recipes displayed in a sortable, scrollable table
-- Double-click a row to edit a recipe
-- Modern look and feel (no trial, no paid features)
-
-### How to Use
-1. Install dependencies (only needed once):
-   ```powershell
-   pip install ttkbootstrap
-   ```
-2. Run the GUI:
-   ```powershell
-   python recipe_gui.py
-   ```
-
-### Screenshots
-*Add your own screenshots here if desired.*
-
-### Notes
-- All data is stored in standard JSON files for easy backup and sharing.
-- The GUI is cross-platform and works on Windows, Mac, and Linux.
-- No proprietary or paid libraries are used.
+A premium, automated meal planning system designed for the Tyagi family. This project combines a mobile-first **Progressive Web App (PWA)** for manual recipe management with a **GitHub Actions-based automation** for daily meal rotation and email distribution.
 
 ---
 
-For any issues or feature requests, please open an issue or contact the maintainer.
+## 🌟 Key Features
 
-## Example Email
-- Modern, clean HTML styling
-- Subject: `🍽️ Family Meal Plan for Wednesday, 28 May 2025`
-- Sections for each meal and tomorrow's ingredients
-- **Footer displays a motivational quote for the current month, with the author's name.**
+### 🍱 Gourmet Web App (PWA)
+- **Luxury Aesthetic**: A sophisticated Slate and Amber gold theme with premium typography.
+- **Recipe Management**: Full CRUD (Create, Read, Update, Delete) capability for family recipes.
+- **Family Distribution**: Add or remove email recipients for daily planning.
+- **Offline Reach**: Installable as a native app on iOS and Android via PWA support.
+- **Gourmet Design**: Pixel-perfect layout across all platforms including specific fixes for iPhone 13 Safari alignment bugs.
 
-## License
-MIT
+### 🔄 Intelligent Automation
+- **Daily Rotation**: Automated selection of Breakfast, Lunch, and Dinner.
+- **No-Repeat Logic**: Ensures recipes don't repeat from the previous day.
+- **Morning Briefing**: Emails sent every morning at **7:00 AM IST**.
+- **Grocery Foresight**: Daily emails include tomorrow's ingredients for proactive shopping.
 
 ---
-**Stay healthy and enjoy your meals!**
+
+## 🏗️ Architecture & Flows
+
+### System Overview
+```mermaid
+graph TD
+    A[Mobile Web App] -- "1. Read/Write (via PAT)" --> B[GitHub Repository]
+    B -- "2. recipes.json / config.json" --> C[GitHub Actions]
+    C -- "3. Execute Rotation Logic" --> D[Python Script]
+    D -- "4. Daily Meal Plan" --> E[SendGrid/SMTP]
+    E -- "5. Morning Email" --> F[Family Members]
+```
+
+### Data Sync Strategy
+The app uses a **Zero-Server** architecture. All data is persisted directly in your GitHub repository as structured JSON files.
+
+```mermaid
+sequenceDiagram
+    participant User as Family User
+    participant App as Mobile Web App
+    participant GH as GitHub API
+    
+    User->>App: Add/Edit Recipe
+    App->>App: Validate & Base64 Encode
+    App->>GH: PUT /recipes.json (Branch: MobileAppVersion)
+    GH-->>App: 200 OK (Commits to Git)
+    App->>User: Toast: Sync Success
+```
+
+---
+
+## 📸 App Interface
+
+````carousel
+![Gourmet Light Dashboard](/Users/azzbeeter/.gemini/antigravity/brain/c216a064-55fd-4f69-a84b-be0a36df72e0/dashboard_view_1769367744684.png)
+<!-- slide -->
+![Gourmet Dark Mode](/Users/azzbeeter/.gemini/antigravity/brain/c216a064-55fd-4f69-a84b-be0a36df72e0/app_dark_mode_final_1769370175517.png)
+<!-- slide -->
+![Family Usage Guide](/Users/azzbeeter/.gemini/antigravity/brain/c216a064-55fd-4f69-a84b-be0a36df72e0/final_app_verification_1769368234654.png)
+````
+
+---
+
+## 🔒 Security & Persistent Sync
+
+To maintain maximum security while allowing family-wide access:
+- **Token-on-Demand**: The GitHub Personal Access Token (PAT) is provided once by the user and stored locally on the device (`localStorage`).
+- **No Hardcoded Secrets**: Sensitive credentials never touch the source code in plain text.
+- **Cache-Busting**: The app uses timestamp-based request parameters to ensure users always see live data, even with aggressive browser caching on iOS.
+
+---
+
+## 🚀 Setup & Installation (Developer Only)
+
+For detailed instructions on repository configuration, hosting, and secret management, refer to the **[DEVELOPER_SETUP.md](DEVELOPER_SETUP.md)** guide.
+
+1. **Pages**: Set GitHub Pages to build from the `docs/` folder on the `MobileAppVersion` branch.
+2. **Secrets**: Ensure `SENDGRID_API_KEY` is set in GitHub Repository Secrets.
+3. **App**: Open the Pages URL and enter your PAT to begin syncing.
+
+---
+
+## 🛠️ Technology Stack
+- **Frontend**: Vanilla HTML5, CSS3 (Variables, Flexbox, Grid), JavaScript (ES6+ App Logic).
+- **Backend**: GitHub API v3, GitHub Pages.
+- **Automation**: Python 3.x, GitHub Actions.
+- **Iconography**: Custom PWA manifest icons for mobile native experience.
+
+---
+
+*A product of Azzbeeter Development Labs.*
