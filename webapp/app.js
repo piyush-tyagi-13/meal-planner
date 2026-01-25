@@ -5,7 +5,8 @@ const App = {
     settings: {
         pat: '', // Loaded from localStorage
         owner: 'piyush-tyagi-13',
-        repo: 'meal-planner'
+        repo: 'meal-planner',
+        branch: 'MobileAppVersion' // Specifically target this branch
     },
 
     recipes: [],
@@ -35,7 +36,9 @@ const App = {
     },
 
     async githubAPI(path, method = 'GET', body = null) {
-        const url = `https://api.github.com/repos/${this.settings.owner}/${this.settings.repo}/contents/${path}`;
+        let url = `https://api.github.com/repos/${this.settings.owner}/${this.settings.repo}/contents/${path}`;
+        if (method === 'GET') url += `?ref=${this.settings.branch}`;
+
         const headers = {
             'Authorization': `token ${this.settings.pat}`,
             'Accept': 'application/vnd.github.v3+json'
