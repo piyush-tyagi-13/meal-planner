@@ -1,3 +1,5 @@
 {
-    "recipients": []
+  "recipients": [
+    "test@example.com"
+  ]
 }
