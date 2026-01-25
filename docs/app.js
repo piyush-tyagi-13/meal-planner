@@ -16,6 +16,7 @@ const App = {
     editingRecipeIndex: null,
 
     init() {
+        this.loadTheme();
         this.loadToken();
         this.bindEvents();
 
@@ -23,6 +24,24 @@ const App = {
             this.showSetupModal();
         } else {
             this.loadData();
+        }
+    },
+
+    loadTheme() {
+        const theme = localStorage.getItem('tyagi_meal_planner_theme') || 'light';
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    },
+
+    toggleTheme() {
+        const current = document.documentElement.getAttribute('data-theme');
+        if (current === 'dark') {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('tyagi_meal_planner_theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('tyagi_meal_planner_theme', 'dark');
         }
     },
 
@@ -284,6 +303,9 @@ const App = {
     },
 
     bindEvents() {
+        // Theme toggle
+        document.getElementById('theme-toggle').addEventListener('click', () => this.toggleTheme());
+
         // Tab switching
         document.querySelectorAll('.tab').forEach(t => {
             t.addEventListener('click', () => {
