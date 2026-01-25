@@ -336,13 +336,40 @@ textarea {
 }
 
 .checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    /* Required for iOS */
     width: 20px;
     height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
     margin: 0;
-    /* Fixes iOS extra spacing */
     flex-shrink: 0;
     cursor: pointer;
-    accent-color: var(--primary);
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Custom Checkmark */
+.checkbox-group input[type="checkbox"]::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    display: none;
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    display: block;
 }
 
 .checkbox-group input:checked+span {
