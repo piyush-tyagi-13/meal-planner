@@ -53,13 +53,12 @@ sequenceDiagram
 
 ## 📸 App Interface
 
-````carousel
-![Gourmet Light Dashboard](/Users/azzbeeter/.gemini/antigravity/brain/c216a064-55fd-4f69-a84b-be0a36df72e0/dashboard_view_1769367744684.png)
-<!-- slide -->
-![Gourmet Dark Mode](/Users/azzbeeter/.gemini/antigravity/brain/c216a064-55fd-4f69-a84b-be0a36df72e0/app_dark_mode_final_1769370175517.png)
-<!-- slide -->
-![Family Usage Guide](/Users/azzbeeter/.gemini/antigravity/brain/c216a064-55fd-4f69-a84b-be0a36df72e0/final_app_verification_1769368234654.png)
-````
+| Light Mode | Dark Mode |
+|------------|-----------|
+| ![Gourmet Light Dashboard](docs/assets/dashboard_light.png) | ![Gourmet Dark Mode](docs/assets/dashboard_dark.png) |
+
+### 📋 Usage Guidelines
+![Family Usage Guide](docs/assets/usage_guide.png)
 
 ---
 
