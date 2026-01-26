@@ -25,7 +25,7 @@
     <nav class="tabs">
         <button class="tab active" data-tab="recipes">Recipes</button>
         <button class="tab" data-tab="recipients">Family</button>
-        <button class="tab" data-tab="automation">Automation</button>
+        <button class="tab" data-tab="mailer">Daily Mailer</button>
         <button class="tab" data-tab="guidelines">Guidelines</button>
     </nav>
 
@@ -55,26 +55,26 @@
             </div>
         </section>
 
-        <!-- Automation Tab -->
-        <section id="automation-tab" class="tab-content">
+        <!-- Daily Mailer Tab -->
+        <section id="mailer-tab" class="tab-content">
             <div class="section-header">
-                <h2>Email Automation</h2>
+                <h2>Daily Meal Plan Email</h2>
             </div>
             <div class="automation-card">
-                <div class="schedule-info">
-                    <h3>🕒 Daily Schedule</h3>
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                        <p id="current-schedule">Loading schedule...</p>
+                <div class="schedule-info" style="border-bottom: none; margin-bottom: 20px; padding-bottom: 0;">
+                    <h3>🕒 Current Schedule</h3>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-top: 10px;">
+                        <p id="current-schedule" style="font-size: 1.8rem;">Loading...</p>
                         <button class="btn btn-secondary" id="edit-schedule-btn"
-                            style="padding: 6px 12px; font-size: 0.8rem;">⚙️ Edit Time</button>
+                            style="padding: 10px 16px; font-size: 0.9rem;">⚙️ Change Time</button>
                     </div>
-                    <small>Time is shown in UTC. 1:00 UTC = 6:30 AM IST.</small>
                 </div>
 
-                <div class="automation-actions">
-                    <button class="btn btn-primary" id="trigger-mailer-btn">🚀 Trigger Mailer Now</button>
+                <div class="automation-actions"
+                    style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed var(--border);">
+                    <button class="btn btn-primary" id="trigger-mailer-btn">🚀 Send Email To Family Now</button>
                     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">
-                        This will force the daily meal plan email to be sent immediately.
+                        Forces the system to send today's meal plan immediately.
                     </p>
                 </div>
             </div>
@@ -213,6 +213,63 @@
                 <div style="display: flex; gap: 12px; margin-top: 10px;">
                     <button type="button" class="btn btn-secondary close-btn" style="flex:1">Cancel</button>
                     <button type="submit" class="btn btn-primary" style="flex:1">Add Member</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div id="schedule-modal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>Set Email Time (IST)</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="schedule-form">
+                <p style="margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                    Choose what time the family should receive the daily meal plan (Indian Standard Time).
+                </p>
+                <div style="display: flex; gap: 12px;">
+                    <div class="form-group" style="flex:1">
+                        <label>Hour</label>
+                        <select id="schedule-hour"
+                            style="width:100%; padding: 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;">
+                            <option value="12">12</option>
+                            <option value="1">01</option>
+                            <option value="2">02</option>
+                            <option value="3">03</option>
+                            <option value="4">04</option>
+                            <option value="5">05</option>
+                            <option value="6">06</option>
+                            <option value="7" selected>07</option>
+                            <option value="8">08</option>
+                            <option value="9">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex:1">
+                        <label>Minute</label>
+                        <select id="schedule-minute"
+                            style="width:100%; padding: 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;">
+                            <option value="00" selected>00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex:1">
+                        <label>AM/PM</label>
+                        <select id="schedule-ampm"
+                            style="width:100%; padding: 12px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;">
+                            <option value="AM" selected>AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; margin-top: 20px;">
+                    <button type="button" class="btn btn-secondary close-btn" style="flex:1">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="flex:1">Save Time</button>
                 </div>
             </form>
         </div>

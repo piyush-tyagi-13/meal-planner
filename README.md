@@ -10,7 +10,7 @@ A premium, automated meal planning system designed for the Tyagi family. This pr
 - **Luxury Aesthetic**: A sophisticated Slate and Amber gold theme with premium typography.
 - **Recipe Stratification**: Direct access to Breakfast, Lunch, Dinner, and Snacks via dedicated sub-tabs.
 - **Smart Filtering**: Advanced search that filters by dish name and specific ingredients (e.g., 'oats', 'chicken').
-- **Automation Control**: A dedicated "Automation" tab to view/adjust the daily mail schedule and force-trigger updates.
+- **Daily Mailer**: A dedicated tab to view/adjust the daily meal plan delivery schedule (in IST) and force-trigger morning emails to the family.
 - **Family Distribution**: Add or remove email recipients for daily planning.
 - **Offline Reach**: Installable as a native app on iOS and Android via PWA support.
 

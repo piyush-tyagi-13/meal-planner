@@ -331,21 +331,53 @@ const App = {
         }
     },
 
-    async editSchedule() {
-        const newTime = prompt("Set new Daily Schedule (UTC format 'm h * * *'):\n\nCommon Times (UTC):\n'0 1 * * *' = 6:30 AM IST\n'30 1 * * *' = 7:00 AM IST\n'0 2 * * *' = 7:30 AM IST", "0 1 * * *");
+    editSchedule() {
+        // Pre-fill modal with current schedule if possible
+        const currentText = document.getElementById('current-schedule').textContent;
+        if (currentText.includes(':')) {
+            const timePart = currentText.replace('Daily at ', '').replace(' (IST)', '');
+            const [time, ampm] = timePart.split(' ');
+            const [h, m] = time.split(':');
+            document.getElementById('schedule-hour').value = parseInt(h);
+            document.getElementById('schedule-minute').value = m;
+            document.getElementById('schedule-ampm').value = ampm;
+        }
+        document.getElementById('schedule-modal').classList.add('active');
+    },
 
-        if (!newTime || !newTime.includes('*')) return;
+    async saveSchedule(e) {
+        e.preventDefault();
+        const h12 = parseInt(document.getElementById('schedule-hour').value);
+        const minIST = parseInt(document.getElementById('schedule-minute').value);
+        const ampm = document.getElementById('schedule-ampm').value;
+
+        let hour24 = h12;
+        if (ampm === 'PM' && hour24 < 12) hour24 += 12;
+        if (ampm === 'AM' && hour24 === 12) hour24 = 0;
+
+        // Convert IST to UTC (-5:30)
+        let hourUTC = hour24 - 5;
+        let minUTC = minIST - 30;
+
+        if (minUTC < 0) {
+            minUTC += 60;
+            hourUTC -= 1;
+        }
+        if (hourUTC < 0) hourUTC += 24;
+
+        const newCron = `${minUTC} ${hourUTC} * * *`;
 
         this.showLoading(true);
         this.showToast('⚙️ Updating Schedule...');
 
         try {
-            const newContent = this.workflowContent.replace(/cron:\s*['"]?([^'"]+)['"]?/, `cron: '${newTime}'`);
-            const res = await this.saveFile('.github/workflows/daily_mailer.yml', newContent, this.workflowSha, `Update Schedule to: ${newTime}`);
+            const newContent = this.workflowContent.replace(/cron:\s*['"]?([^'"]+)['"]?/, `cron: '${newCron}'`);
+            const res = await this.saveFile('.github/workflows/daily_mailer.yml', newContent, this.workflowSha, `Update Schedule to: ${newCron}`);
 
             this.workflowSha = res.content.sha;
             this.workflowContent = newContent;
-            document.getElementById('current-schedule').textContent = `Daily at ${this.formatCron(newTime)}`;
+            document.getElementById('current-schedule').textContent = `Daily at ${this.formatCron(newCron)}`;
+            this.closeModal('schedule-modal');
             this.showToast('✅ Schedule Updated!');
         } catch (e) {
             console.error('Update error:', e);
@@ -443,6 +475,7 @@ const App = {
 
         document.getElementById('recipe-form').addEventListener('submit', (e) => this.saveRecipe(e));
         document.getElementById('recipient-form').addEventListener('submit', (e) => this.addRecipient(e));
+        document.getElementById('schedule-form').addEventListener('submit', (e) => this.saveSchedule(e));
         document.getElementById('setup-form').addEventListener('submit', (e) => this.handleSetup(e));
         document.getElementById('recipe-search').addEventListener('input', (e) => this.renderRecipes(e.target.value));
 
