@@ -370,5 +370,22 @@
       "•\tMultigrain flour – 2 small rotis max"
     ],
     "recipe": "https://www.youtube.com/watch?v=FQpKZlYQq7E"
+  },
+  {
+    "id": "R1769448305583",
+    "name": "Vegetable Soup",
+    "mealTimeEligibility": [
+      "dinner"
+    ],
+    "ingredients": [
+      "Ingredients:",
+      "•\tCarrot – ½ cup",
+      "•\tBeans – ½ cup",
+      "•\tBottle gourd / pumpkin – ½ cup",
+      "•\tGarlic – 2 cloves",
+      "•\tPepper – to taste",
+      "•\tOlive oil – ½ tsp"
+    ],
+    "recipe": "https://www.youtube.com/watch?v=JxgK3z7Yt2M"
   }
 ]
