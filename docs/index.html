@@ -25,6 +25,7 @@
     <nav class="tabs">
         <button class="tab active" data-tab="recipes">Recipes</button>
         <button class="tab" data-tab="recipients">Family</button>
+        <button class="tab" data-tab="automation">Automation</button>
         <button class="tab" data-tab="guidelines">Guidelines</button>
     </nav>
 
@@ -36,11 +37,46 @@
                 <h2>Our Menu</h2>
                 <button class="btn btn-primary" id="add-recipe-btn">+ Add Recipe</button>
             </div>
+
+            <!-- Category Sub-Tabs -->
+            <div class="sub-tabs">
+                <button class="sub-tab active" data-category="all">All</button>
+                <button class="sub-tab" data-category="breakfast">Breakfast</button>
+                <button class="sub-tab" data-category="lunch">Lunch</button>
+                <button class="sub-tab" data-category="dinner">Dinner</button>
+                <button class="sub-tab" data-category="snack">Snacks</button>
+            </div>
+
             <div class="search-box">
-                <input type="text" id="recipe-search" placeholder="Search for flavors or ingredients...">
+                <input type="text" id="recipe-search" placeholder="Search dish or ingredients (e.g. 'Oats', 'Paneer')">
             </div>
             <div id="recipes-list" class="cards-list">
                 <!-- Recipes loaded here -->
+            </div>
+        </section>
+
+        <!-- Automation Tab -->
+        <section id="automation-tab" class="tab-content">
+            <div class="section-header">
+                <h2>Email Automation</h2>
+            </div>
+            <div class="automation-card">
+                <div class="schedule-info">
+                    <h3>🕒 Daily Schedule</h3>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <p id="current-schedule">Loading schedule...</p>
+                        <button class="btn btn-secondary" id="edit-schedule-btn"
+                            style="padding: 6px 12px; font-size: 0.8rem;">⚙️ Edit Time</button>
+                    </div>
+                    <small>Time is shown in UTC. 1:00 UTC = 6:30 AM IST.</small>
+                </div>
+
+                <div class="automation-actions">
+                    <button class="btn btn-primary" id="trigger-mailer-btn">🚀 Trigger Mailer Now</button>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 10px;">
+                        This will force the daily meal plan email to be sent immediately.
+                    </p>
+                </div>
             </div>
         </section>
 

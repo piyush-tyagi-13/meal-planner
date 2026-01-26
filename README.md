@@ -8,10 +8,11 @@ A premium, automated meal planning system designed for the Tyagi family. This pr
 
 ### 🍱 Gourmet Web App (PWA)
 - **Luxury Aesthetic**: A sophisticated Slate and Amber gold theme with premium typography.
-- **Recipe Management**: Full CRUD (Create, Read, Update, Delete) capability for family recipes.
+- **Recipe Stratification**: Direct access to Breakfast, Lunch, Dinner, and Snacks via dedicated sub-tabs.
+- **Smart Filtering**: Advanced search that filters by dish name and specific ingredients (e.g., 'oats', 'chicken').
+- **Automation Control**: A dedicated "Automation" tab to view/adjust the daily mail schedule and force-trigger updates.
 - **Family Distribution**: Add or remove email recipients for daily planning.
 - **Offline Reach**: Installable as a native app on iOS and Android via PWA support.
-- **Gourmet Design**: Pixel-perfect layout across all platforms including specific fixes for iPhone 13 Safari alignment bugs.
 
 ### 🔄 Intelligent Automation
 - **Daily Rotation**: Automated selection of Breakfast, Lunch, and Dinner.

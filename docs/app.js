@@ -14,6 +14,7 @@ const App = {
     recipesSha: null,
     configSha: null,
     editingRecipeIndex: null,
+    activeCategory: 'all', // For recipe filtering
 
     init() {
         this.loadTheme();
@@ -87,9 +88,10 @@ const App = {
     },
 
     async saveFile(filename, content, sha, message) {
+        const contentStr = typeof content === 'string' ? content : JSON.stringify(content, null, 2);
         const body = {
             message,
-            content: btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2)))),
+            content: btoa(unescape(encodeURIComponent(contentStr))),
             sha,
             branch: this.settings.branch
         };
@@ -119,6 +121,7 @@ const App = {
 
             this.renderRecipes();
             this.renderRecipients();
+            this.loadWorkflowSchedule(); // Load schedule on data sync
         } catch (e) {
             console.error('Load error:', e);
             this.showToast('⚠️ Data sync failed');
@@ -129,15 +132,20 @@ const App = {
 
     renderRecipes(filter = '') {
         const list = document.getElementById('recipes-list');
-        const searchTerm = filter.toLowerCase();
+        const searchTerm = (filter || document.getElementById('recipe-search').value).toLowerCase();
 
-        const filtered = this.recipes.filter(r =>
-            r.name.toLowerCase().includes(searchTerm) ||
-            r.ingredients?.some(i => i.toLowerCase().includes(searchTerm))
-        );
+        const filtered = this.recipes.filter(r => {
+            const matchesCategory = this.activeCategory === 'all' ||
+                (r.mealTimeEligibility || []).includes(this.activeCategory);
+
+            const matchesSearch = r.name.toLowerCase().includes(searchTerm) ||
+                r.ingredients?.some(i => i.toLowerCase().includes(searchTerm));
+
+            return matchesCategory && matchesSearch;
+        });
 
         if (filtered.length === 0) {
-            list.innerHTML = `<div class="empty-state"><span>🍱</span><p>No recipes found</p></div>`;
+            list.innerHTML = `<div class="empty-state"><span>🍱</span><p>No ${this.activeCategory !== 'all' ? this.activeCategory : ''} recipes found</p></div>`;
             return;
         }
 
@@ -280,6 +288,81 @@ const App = {
     closeModal(id) { document.getElementById(id).classList.remove('active'); },
     showLoading(s) { document.getElementById('loading').classList.toggle('hidden', !s); },
     showToast(m) { const t = document.getElementById('toast'); t.textContent = m; t.classList.remove('hidden'); setTimeout(() => t.classList.add('hidden'), 2500); },
+    async loadWorkflowSchedule() {
+        try {
+            const data = await this.githubAPI('.github/workflows/daily_mailer.yml');
+            if (data) {
+                this.workflowSha = data.sha;
+                this.workflowContent = atob(data.content);
+                const cronMatch = this.workflowContent.match(/cron:\s*['"]?([^'"]+)['"]?/);
+                if (cronMatch) {
+                    document.getElementById('current-schedule').textContent = `Daily at ${cronMatch[1]}`;
+                }
+            }
+        } catch (e) {
+            document.getElementById('current-schedule').textContent = 'Unable to load schedule';
+        }
+    },
+
+    async editSchedule() {
+        const newTime = prompt("Set new Daily Schedule (UTC format 'm h * * *'):\n\nCommon Times (UTC):\n'0 1 * * *' = 6:30 AM IST\n'30 1 * * *' = 7:00 AM IST\n'0 2 * * *' = 7:30 AM IST", "0 1 * * *");
+
+        if (!newTime || !newTime.includes('*')) return;
+
+        this.showLoading(true);
+        this.showToast('⚙️ Updating Schedule...');
+
+        try {
+            const newContent = this.workflowContent.replace(/cron:\s*['"]?([^'"]+)['"]?/, `cron: '${newTime}'`);
+            const res = await this.saveFile('.github/workflows/daily_mailer.yml', newContent, this.workflowSha, `Update Schedule to: ${newTime}`);
+
+            this.workflowSha = res.content.sha;
+            this.workflowContent = newContent;
+            document.getElementById('current-schedule').textContent = `Daily at ${newTime}`;
+            this.showToast('✅ Schedule Updated!');
+        } catch (e) {
+            console.error('Update error:', e);
+            this.showToast('❌ Update failed. Check your token scope.');
+        } finally {
+            this.showLoading(false);
+        }
+    },
+
+    async triggerWorkflow() {
+        this.showLoading(true);
+        this.showToast('🚀 Dispatching Mailer...');
+
+        try {
+            // GitHub API for workflow dispatch requires repository and workflow filename
+            // URL format: /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches
+            // Using a generic path based on our filename
+            const path = `actions/workflows/daily_mailer.yml/dispatches`;
+            const body = { ref: this.settings.branch };
+
+            // Workflow dispatches is a POST to the actions API namespace
+            const url = `https://api.github.com/repos/${this.settings.owner}/${this.settings.repo}/${path}`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `token ${this.settings.pat}`,
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify(body)
+            });
+
+            if (response.ok) {
+                this.showToast('✅ Mailer Triggered! Check your inbox in 2-3 mins.');
+            } else {
+                throw new Error('Trigger failed');
+            }
+        } catch (e) {
+            console.error('Trigger error:', e);
+            this.showToast('❌ Trigger failed. Is your token valid?');
+        } finally {
+            this.showLoading(false);
+        }
+    },
+
     escapeHtml(t) { const d = document.createElement('div'); d.textContent = t; return d.innerHTML; },
 
     showSetupModal() {
@@ -328,10 +411,23 @@ const App = {
         });
         document.getElementById('add-recipe-btn').addEventListener('click', () => this.openRecipeModal());
         document.getElementById('add-recipient-btn').addEventListener('click', () => document.getElementById('recipient-modal').classList.add('active'));
+        document.getElementById('trigger-mailer-btn').addEventListener('click', () => this.triggerWorkflow());
+        document.getElementById('edit-schedule-btn').addEventListener('click', () => this.editSchedule());
+
         document.getElementById('recipe-form').addEventListener('submit', (e) => this.saveRecipe(e));
         document.getElementById('recipient-form').addEventListener('submit', (e) => this.addRecipient(e));
         document.getElementById('setup-form').addEventListener('submit', (e) => this.handleSetup(e));
         document.getElementById('recipe-search').addEventListener('input', (e) => this.renderRecipes(e.target.value));
+
+        // Recipe Category switching
+        document.querySelectorAll('.sub-tab').forEach(st => {
+            st.addEventListener('click', () => {
+                document.querySelectorAll('.sub-tab').forEach(el => el.classList.remove('active'));
+                st.classList.add('active');
+                this.activeCategory = st.dataset.category;
+                this.renderRecipes();
+            });
+        });
 
         // Settings/Edit Token trigger
         document.querySelectorAll('.edit-token-btn').forEach(btn => {
