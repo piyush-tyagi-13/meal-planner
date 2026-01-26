@@ -296,11 +296,38 @@ const App = {
                 this.workflowContent = atob(data.content);
                 const cronMatch = this.workflowContent.match(/cron:\s*['"]?([^'"]+)['"]?/);
                 if (cronMatch) {
-                    document.getElementById('current-schedule').textContent = `Daily at ${cronMatch[1]}`;
+                    document.getElementById('current-schedule').textContent = `Daily at ${this.formatCron(cronMatch[1])}`;
                 }
             }
         } catch (e) {
             document.getElementById('current-schedule').textContent = 'Unable to load schedule';
+        }
+    },
+
+    formatCron(cron) {
+        try {
+            const parts = cron.split(' ');
+            if (parts.length < 2) return cron;
+
+            let min = parseInt(parts[0]);
+            let hour = parseInt(parts[1]);
+
+            // Convert UTC to IST (+5:30)
+            min += 30;
+            if (min >= 60) {
+                min -= 60;
+                hour += 1;
+            }
+            hour += 5;
+            if (hour >= 24) hour -= 24;
+
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const h12 = hour % 12 || 12;
+            const mStr = min.toString().padStart(2, '0');
+
+            return `${h12}:${mStr} ${ampm} (IST)`;
+        } catch (e) {
+            return cron;
         }
     },
 
@@ -318,7 +345,7 @@ const App = {
 
             this.workflowSha = res.content.sha;
             this.workflowContent = newContent;
-            document.getElementById('current-schedule').textContent = `Daily at ${newTime}`;
+            document.getElementById('current-schedule').textContent = `Daily at ${this.formatCron(newTime)}`;
             this.showToast('✅ Schedule Updated!');
         } catch (e) {
             console.error('Update error:', e);
