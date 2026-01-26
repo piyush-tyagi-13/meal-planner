@@ -107,6 +107,16 @@ h1,
     margin: 0;
 }
 
+/* Title Logo */
+.header .title-logo {
+    height: 100px;
+    /* Adjust as needed */
+    width: auto;
+    margin: 0 auto;
+    /* Center the logo */
+    display: block;
+}
+
 /* Tabs */
 .tabs {
     display: flex;
