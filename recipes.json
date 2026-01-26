@@ -304,5 +304,26 @@
       "Tofu, corn, broccoli, capsicum, beans,garlic,carrot"
     ],
     "recipe": "https://youtu.be/10aJoTHjX0c?si=q-fzZp158jiEyCrr"
+  },
+  {
+    "id": "R1769447909073",
+    "name": "Vegetable Oats Upma",
+    "mealTimeEligibility": [
+      "breakfast"
+    ],
+    "ingredients": [
+      "Ingredients (2 servings):",
+      "•\tRolled oats – 1 cup",
+      "•\tOnion – 1 small (chopped)",
+      "•\tCarrot – 1 small (chopped)",
+      "•\tBeans – 6–8 (chopped)",
+      "•\tGreen chilli – 1 (optional)",
+      "•\tMustard seeds – ½ tsp",
+      "•\tCurry leaves – 8–10",
+      "•\tOlive oil – 1 tsp",
+      "•\tSalt – to taste",
+      "•\tWater – as needed"
+    ],
+    "recipe": "YouTube: https://www.youtube.com/watch?v=1cH4oZ1Jx6E"
   }
 ]
