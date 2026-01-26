@@ -387,5 +387,21 @@
       "•\tOlive oil – ½ tsp"
     ],
     "recipe": "https://www.youtube.com/watch?v=JxgK3z7Yt2M"
+  },
+  {
+    "id": "R1769448366062",
+    "name": "Veggies plus daal",
+    "mealTimeEligibility": [
+      "dinner"
+    ],
+    "ingredients": [
+      "Veg Ingredients:",
+      "•\tBroccoli – ½ cup",
+      "•\tCapsicum – ½ cup",
+      "•\tCarrot – ½ cup",
+      "•\tOlive oil – 1 tsp",
+      "Dal: thin moong/masoor dal – 1 cup"
+    ],
+    "recipe": "https://www.youtube.com/watch?v=7X7mYV6B6o4"
   }
 ]
