@@ -309,5 +309,16 @@
       "lemon"
     ],
     "recipe": "Light dinner of papaya and sprouts. Enzymes in papaya aid liver health."
+  },
+  {
+    "id": "R1769446812135",
+    "name": "Vegetable tofu salad",
+    "mealTimeEligibility": [
+      "dinner"
+    ],
+    "ingredients": [
+      "Tofu, corn, broccoli, capsicum, beans,garlic,carrot"
+    ],
+    "recipe": "https://youtu.be/10aJoTHjX0c?si=q-fzZp158jiEyCrr"
   }
 ]
