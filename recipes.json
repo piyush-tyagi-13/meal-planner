@@ -1,21 +1,5 @@
 [
   {
-    "id": "R001",
-    "name": "Vegetable Oats Upma",
-    "mealTimeEligibility": [
-      "breakfast"
-    ],
-    "ingredients": [
-      "rolled oats",
-      "carrot",
-      "beans",
-      "onion",
-      "mustard seeds",
-      "capsicum"
-    ],
-    "recipe": "Dry roast oats. Sauté plenty of veggies in mustard oil, add oats and water. High soluble fiber lowers LDL."
-  },
-  {
     "id": "R002",
     "name": "Egg White & Veggie Omelet",
     "mealTimeEligibility": [
