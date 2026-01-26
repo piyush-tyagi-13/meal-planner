@@ -2,7 +2,7 @@ name: Daily Family Meal Mailer
 
 on:
   schedule:
-    - cron: '45 NaN * * *'  # Runs daily at 7 AM IST (1:00 UTC)
+    - cron: '45 2 * * *'  # Runs daily at 7 AM IST (1:00 UTC)
   workflow_dispatch:      # Allow manual trigger
 
 jobs:
