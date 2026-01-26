@@ -29,7 +29,7 @@ graph TD
     A[Mobile Web App] -- "1. Read/Write (via PAT)" --> B[GitHub Repository]
     B -- "2. recipes.json / config.json" --> C[GitHub Actions]
     C -- "3. Execute Rotation Logic" --> D[Python Script]
-    D -- "4. Daily Meal Plan" --> E[SendGrid/SMTP]
+    D -- "4. Daily Meal Plan" --> E[Gmail SMTP]
     E -- "5. Morning Email" --> F[Family Members]
 ```
 
@@ -76,7 +76,7 @@ To maintain maximum security while allowing family-wide access:
 For detailed instructions on repository configuration, hosting, and secret management, refer to the **[DEVELOPER_SETUP.md](DEVELOPER_SETUP.md)** guide.
 
 1. **Pages**: Set GitHub Pages to build from the `docs/` folder on the `MobileAppVersion` branch.
-2. **Secrets**: Ensure `SENDGRID_API_KEY` is set in GitHub Repository Secrets.
+2. **Secrets**: Ensure `GMAIL_SENDER_EMAIL` and `GMAIL_APP_PASSWORD` are set in GitHub Repository Secrets.
 3. **App**: Open the Pages URL and enter your PAT to begin syncing.
 
 ---

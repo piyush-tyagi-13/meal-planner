@@ -40,5 +40,9 @@ Share your GitHub Pages URL with the family. They can "install" it by:
 
 ## 🛠️ Maintenance
 
-- **Email Logic**: The daily automation still runs via GitHub Actions (`.github/workflows/daily_mailer.yml`).
-- **Data Persistence**: Recipes are stored in `recipes.json` and family members in `config.json`. The webapp manages these files automatically.
+- **Email Logic**: The daily automation runs via GitHub Actions (`.github/workflows/daily_mailer.yml`).
+- **Secrets Required**:
+    - `GMAIL_SENDER_EMAIL`: Your Gmail address.
+    - `GMAIL_APP_PASSWORD`: A Gmail App Password (Settings → Security → 2FA → App Passwords).
+    - `GH_PAT`: Your GitHub Personal Access Token (for the automation to push updates).
+- **Data Persistence**: Recipes are stored in `recipes.json` and family members in `config.json`.
