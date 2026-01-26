@@ -102,17 +102,23 @@
   },
   {
     "id": "R009",
-    "name": "Besan and Methi Chilla",
+    "name": "Besan Chilla",
     "mealTimeEligibility": [
       "breakfast",
       "lunch"
     ],
     "ingredients": [
-      "besan",
-      "methi leaves",
-      "ajwain"
+      "Ingredients (2 chillas):",
+      "•\tBesan (gram flour) – 1 cup",
+      "•\tOnion – ½ cup (finely chopped)",
+      "•\tCoriander leaves – 2 tbsp",
+      "•\tAjwain (carom seeds) – ¼ tsp",
+      "•\tTurmeric – a pinch",
+      "•\tSalt – to taste",
+      "•\tWater – to make batter",
+      "•\tOil – 1 tsp total"
     ],
-    "recipe": "Cook methi-besan pancakes. Methi helps reduce cholesterol absorption."
+    "recipe": "YouTube: https://www.youtube.com/watch?v=0wYxvZJ2sGk"
   },
   {
     "id": "R010",
